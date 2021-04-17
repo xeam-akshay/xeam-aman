@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "729528596235",
+    "firebase_url": "https://xenia-a8cbc.firebaseio.com",
+    "project_id": "xenia-a8cbc",
+    "storage_bucket": "xenia-a8cbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729528596235:android:4fc2ab5883fe5642a7940e",
+        "android_client_info": {
+          "package_name": "com.xenia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729528596235-60vuhdrrkh73i0tpobmeri4v6oq2vo00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xenia",
+            "certificate_hash": "45f19859b481ad0a373de9b6e004b825e9ea4b59"
+          }
+        },
+        {
+          "client_id": "729528596235-4eho0n72ga2ffqoed049euga5c7u8ukg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6LEdNt4kLlBx-ZZo-hAGmcVV6VadEy7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729528596235-4eho0n72ga2ffqoed049euga5c7u8ukg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "729528596235-131f0lt98ilcmhqcqbc2vmbdtg2n2vm6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "xeam.xenia-latest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

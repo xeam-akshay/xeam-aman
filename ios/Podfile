@@ -1,0 +1,113 @@
+platform :ios, '10.0'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+target 'xenia' do
+  # Pods for xenia
+  pod 'Firebase/Core'
+  pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
+  pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
+  pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
+  pod 'RCTTypeSafety', :path => "../node_modules/react-native/Libraries/TypeSafety"
+  pod 'React', :path => '../node_modules/react-native/'
+  pod 'React-Core', :path => '../node_modules/react-native/'
+  pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
+  pod 'React-Core/DevSupport', :path => '../node_modules/react-native/'
+  pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+  pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
+  pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
+  pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image'
+  pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+  pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network'
+  pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
+  pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
+  pod 'React-Core/RCTWebSocket', :path => '../node_modules/react-native/'
+  pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+  pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+  pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+  pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
+  pod 'React-callinvoker', :path => "../node_modules/react-native/ReactCommon/callinvoker"
+  pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
+  pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'GoogleMaps' #ADD THIS LINE TO YOUR CODE IF YOU WANT GOOGLEMAPS IN IOS
+  
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
+
+  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
+
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+  
+#  pod 'react-native-firebase', :path => '../node_modules/react-native-firebase/ios'
+
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # If you need GoogleMaps support on iOS
+
+
+  pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+
+  pod 'BugsnagReactNative', :path => '../node_modules/bugsnag-react-native'
+
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
+  # pod 'react-native-camera', :path => "../node_modules/react-native-camera"
+
+  # pod 'RNPdfScanner', :path => '../node_modules/react-native-document-scanner'
+
+  pod 'react-native-location', :path => '../node_modules/react-native-location'
+
+  pod '@mauron85_react-native-background-geolocation', :path => '../node_modules/@mauron85/react-native-background-geolocation'
+
+  #pod 'RNReactNativePdfLib', :path => '../node_modules/react-native-pdf-lib'
+
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  
+    permissions_path = '../node_modules/react-native-permissions/ios'
+    
+    pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+    
+
+  target 'xeniaTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'Google-Maps-iOS-Utils'
+#    pod 'Firebase/Core'
+    # # add the Firebase pod for Google Analytics
+#    pod 'Firebase/Analytics'
+#    pod 'Firebase/Messaging'
+    # add pods for any other desired Firebase products
+    # https://firebase.google.com/docs/ios/setup#available-pods
+  end
+
+  use_native_modules!
+end
+
+target 'xenia-tvOS' do
+  # Pods for xenia-tvOS
+
+  target 'xenia-tvOSTests' do
+    # inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+post_install do |pi|
+    pi.pods_project.targets.each do |t|
+      t.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+end
